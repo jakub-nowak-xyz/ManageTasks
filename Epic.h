@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "WorkItem.h"
+#include "UserActions.h"
 #include "User.h"
 
 using namespace std;

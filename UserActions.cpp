@@ -84,6 +84,7 @@ void UserActions::CreateTask(vector<WorkItem *> &workItems)
 
 void UserActions::FindTask(vector<WorkItem *> &workItems)
 {
+    system("clear");
     int id;
     while (true)
     {
@@ -113,4 +114,11 @@ void UserActions::FindTask(vector<WorkItem *> &workItems)
     }
 
     cout << "Task with ID " << id << " not found." << endl;
+}
+
+tuple<string, User> UserActions::addComment()
+{
+    string message = GetInput("Enter comment message:");
+    User author = CreateUser();
+    return make_tuple(message, author);
 }

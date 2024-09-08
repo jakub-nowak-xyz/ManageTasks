@@ -14,7 +14,15 @@ void Task::GetInfo()
     cout << " -- -- -- -- -Comments-- -- -- -- -" << endl;
     ShowComments();
 
-    addComment();
+    cout << "Do you want to add a comment? (Y/N): ";
+    char option;
+    cin >> option;
+    cin.ignore();
+    if (option == 'Y' || option == 'y')
+    {
+        auto [message, author] = UserActions::addComment();
+        addComment(message, author);
+    }
 }
 
 void Task::GetInfoMin()

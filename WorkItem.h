@@ -35,7 +35,7 @@ public:
     // Member functions
     void GetWorkItemInfo() const;
     void ShowComments() const;
-    void addComment();
+    void addComment(const std::string &message, const User &author);
 
     int GetId() const
     {

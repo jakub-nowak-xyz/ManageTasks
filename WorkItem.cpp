@@ -16,7 +16,8 @@ void WorkItem::ShowComments() const
     }
 }
 
-void WorkItem::addComment()
+void WorkItem::addComment(const std::string &message, const User &author)
 {
-    // Add a comment to the work item
+    Comment newComment(message, author);
+    comments.push_back(newComment);
 }

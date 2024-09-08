@@ -33,6 +33,7 @@ int main()
         else if (userOption == "3")
         {
             cout << "Find task" << endl;
+            UserActions::FindTask(workItems);
             MenuHelpers::GetContinueMessage();
         }
         else if (userOption == "4")
