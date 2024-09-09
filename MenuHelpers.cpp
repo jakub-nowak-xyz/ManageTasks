@@ -24,8 +24,8 @@ void MenuHelpers::GetMenuOptions()
     cout << "Manage Tasks App Option:" << endl;
     cout << "1. Add new work item." << endl;
     cout << "2. Remove work item." << endl;
-    cout << "3. Find task by ID" << endl;
-    cout << "4. Display all tasks" << endl;
+    cout << "3. Find task by ID." << endl;
+    cout << "4. Display all tasks." << endl;
     cout << "To exit the program type 'exit'" << endl;
 }
 
@@ -38,7 +38,7 @@ void MenuHelpers::GetContinueMessage()
 void MenuHelpers::CreateNewTaskUI(vector<WorkItem *> &workItems)
 {
     system("clear");
-    cout << "Creating new Working Item" << endl;
+    cout << "Creating new work item" << endl;
 
     cout << "1. Epic" << endl;
     cout << "2. Task" << endl;

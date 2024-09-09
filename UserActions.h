@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class WorkItem; // Forward declaration
+class WorkItem;
 
 class UserActions
 {
@@ -27,4 +27,4 @@ public:
     static tuple<string, User> addCommentUI();
 };
 
-#endif // USERACTIONS_H
+#endif
