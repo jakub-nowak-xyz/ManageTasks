@@ -1,5 +1,6 @@
 #include "UserActions.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ tuple<string, string, int, User> UserActions::CreateWorkItem()
         try
         {
             priority = stoi(priorityText);
-            break; // Exit the loop if conversion is successful
+            break;
         }
         catch (const invalid_argument &e)
         {
@@ -92,7 +93,7 @@ void UserActions::FindTask(vector<WorkItem *> &workItems)
         try
         {
             id = stoi(idText);
-            break; // Exit the loop if conversion is successful
+            break;
         }
         catch (const invalid_argument &e)
         {
@@ -116,7 +117,46 @@ void UserActions::FindTask(vector<WorkItem *> &workItems)
     cout << "Task with ID " << id << " not found." << endl;
 }
 
-tuple<string, User> UserActions::addComment()
+void UserActions::RemoveTask(vector<WorkItem *> &workItems)
+{
+    system("clear");
+    int id;
+    string idText = GetInput("Enter work item ID:");
+
+    try
+    {
+        id = stoi(idText);
+
+        auto it = remove_if(workItems.begin(), workItems.end(), [id](WorkItem *item) // Free work item memory  when ID matches lambda
+                            {
+            if (item->GetId() == id)
+            {
+                delete item; // Free the memory
+                return true;
+            }
+            return false; });
+
+        if (it != workItems.end())
+        {
+            workItems.erase(it, workItems.end()); // Remove the item from the vector
+            cout << "Task with ID " << id << " has been removed." << endl;
+        }
+        else
+        {
+            cout << "Task with ID " << id << " not found." << endl;
+        }
+    }
+    catch (const invalid_argument &e)
+    {
+        cout << "Invalid input. Please enter a valid number." << endl;
+    }
+    catch (const out_of_range &e)
+    {
+        cout << "Number out of range. Please enter a smaller number." << endl;
+    }
+}
+
+tuple<string, User> UserActions::addCommentUI()
 {
     string message = GetInput("Enter comment message:");
     User author = CreateUser();

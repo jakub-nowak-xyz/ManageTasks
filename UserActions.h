@@ -23,7 +23,8 @@ public:
     static void CreateTask(vector<WorkItem *> &workItems);
     static void CreateEpic(vector<WorkItem *> &workItems);
     static void FindTask(vector<WorkItem *> &workItems);
-    static tuple<string, User> addComment();
+    static void RemoveTask(vector<WorkItem *> &workItems);
+    static tuple<string, User> addCommentUI();
 };
 
 #endif // USERACTIONS_H

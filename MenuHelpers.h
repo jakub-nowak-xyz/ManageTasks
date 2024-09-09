@@ -13,5 +13,5 @@ public:
     static void DisplayAllTasks(vector<WorkItem *> &workingItems);
     static void GetMenuOptions();
     static void GetContinueMessage();
-    static void CreateNewTask(vector<WorkItem *> &workItems);
+    static void CreateNewTaskUI(vector<WorkItem *> &workItems);
 };

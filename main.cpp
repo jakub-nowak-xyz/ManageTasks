@@ -22,12 +22,13 @@ int main()
 
         if (userOption == "1")
         {
-            MenuHelpers::CreateNewTask(workItems);
+            MenuHelpers::CreateNewTaskUI(workItems);
             MenuHelpers::GetContinueMessage();
         }
         else if (userOption == "2")
         {
             cout << "Remove task" << endl;
+            UserActions::RemoveTask(workItems);
             MenuHelpers::GetContinueMessage();
         }
         else if (userOption == "3")

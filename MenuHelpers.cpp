@@ -35,7 +35,7 @@ void MenuHelpers::GetContinueMessage()
     cin.get();
 }
 
-void MenuHelpers::CreateNewTask(vector<WorkItem *> &workItems)
+void MenuHelpers::CreateNewTaskUI(vector<WorkItem *> &workItems)
 {
     system("clear");
     cout << "Creating new Working Item" << endl;

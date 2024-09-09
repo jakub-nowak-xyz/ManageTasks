@@ -20,7 +20,7 @@ void Task::GetInfo()
     cin.ignore();
     if (option == 'Y' || option == 'y')
     {
-        auto [message, author] = UserActions::addComment();
+        auto [message, author] = UserActions::addCommentUI();
         addComment(message, author);
     }
 }
